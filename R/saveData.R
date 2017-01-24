@@ -11,7 +11,7 @@
 saveData <- function(data, table) {
   require(RMySQL)
   # Connect to the database
-  db <- dbConnect(MySQL(), dbname = ptions()$mysql$host, host = options()$mysql$host, 
+  db <- dbConnect(MySQL(), dbname = options()$mysql$host, host = options()$mysql$host, 
                   port = options()$mysql$port, user = options()$mysql$user, 
                   password = options()$mysql$password)
   # Construct the update query by looping over the data fields

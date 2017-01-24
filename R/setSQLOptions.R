@@ -9,7 +9,7 @@
 #' @keywords sql, RMySQL, mysql
 #' @export
 #' @examples
-#'   setSQLOptions("localhost",3306,"user","password")
+#'   setSQLOptions("localhost",3306,"user","password","dbName")
 
 setSQLOptions <- function(localhoststr, portno, userstr, passwdstr, dbNameStr){
   options(mysql = list(

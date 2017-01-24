@@ -21,7 +21,7 @@ setSQLOptions(localhoststr, portno, userstr, passwdstr, dbNameStr)
 This function sets SQL default options for making database connections
 }
 \examples{
-  setSQLOptions("localhost",3306,"user","password")
+  setSQLOptions("localhost",3306,"user","password","dbName")
 }
 \keyword{RMySQL,}
 \keyword{mysql}
