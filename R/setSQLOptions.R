@@ -16,7 +16,8 @@ setSQLOptions <- function(localhoststr, portno, userstr, passwdstr, dbNameStr){
   "host" = localhoststr,
   "port" = portno,
   "user" = userstr,
-  "password" = passwdstr
+  "password" = passwdstr,
+  "database" = dbNameStr
   ))
   
   databaseName <- dbNameStr

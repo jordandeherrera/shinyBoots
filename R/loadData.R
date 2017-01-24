@@ -10,7 +10,7 @@
 loadData <- function(sqlString) {
   require(RMySQL)
   # Connect to the database
-  db <- dbConnect(MySQL(), dbname = databaseName, host = options()$mysql$host, 
+  db <- dbConnect(MySQL(), dbname = options()$mysql$database, host = options()$mysql$host, 
                   port = options()$mysql$port, user = options()$mysql$user, 
                   password = options()$mysql$password)
   # Construct the fetching query
