@@ -8,6 +8,7 @@
 #'   dat <- loadData("SELECT * FROM t_customers")
 
 loadData <- function(sqlString) {
+  require(RMySQL)
   # Connect to the database
   db <- dbConnect(MySQL(), dbname = databaseName, host = options()$mysql$host, 
                   port = options()$mysql$port, user = options()$mysql$user, 

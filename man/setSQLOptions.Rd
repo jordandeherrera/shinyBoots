@@ -4,9 +4,11 @@
 \alias{setSQLOptions}
 \title{Set SQL Options}
 \usage{
-setSQLOptions(localhoststr, portno, userstr, passwdstr)
+setSQLOptions(localhoststr, portno, userstr, passwdstr, dbNameStr)
 }
 \arguments{
+\item{dbNameStr}{Database name to use for connections}
+
 \item{host}{Host location (often times localhost)}
 
 \item{port}{Port where the mysql server is open}
