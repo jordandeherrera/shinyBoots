@@ -2,7 +2,7 @@
 % Please edit documentation in R/createPrezModal.R
 \name{createPrezModal}
 \alias{createPrezModal}
-\title{Launch a Modal on Shiny Page Load Function}
+\title{Create a Modal Based On a Google Slide Presentation}
 \usage{
 createPrezModal(id, modalTitle, prezSrc)
 }
@@ -14,7 +14,7 @@ createPrezModal(id, modalTitle, prezSrc)
 \item{prezSrc}{This is the URL of the published Google presentation that you want to appear in the modal.}
 }
 \description{
-This function loads a modal after a page is loaded in Shiny.
+This function creates a modal based on a Google Presentation.
 }
 \examples{
 output$postmortemModal <- renderUI({
