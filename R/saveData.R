@@ -14,14 +14,7 @@ saveData <- function(data, table) {
   db <- dbConnect(MySQL(), dbname = options()$mysql$database, host = options()$mysql$host, 
                   port = options()$mysql$port, user = options()$mysql$user, 
                   password = options()$mysql$password)
-  # Construct the update query by looping over the data fields
-  query <- sprintf(
-    "INSERT INTO %s (%s) VALUES ('%s')",
-    table, 
-    paste(names(data), collapse = ", "),
-    paste(data, collapse = "', '")
-  )
   # Submit the update query and disconnect
-  dbGetQuery(db, query)
+  dbWriteTable(db, table, data, append = T, overwrite = F, row.names = F)
   dbDisconnect(db)
 }
