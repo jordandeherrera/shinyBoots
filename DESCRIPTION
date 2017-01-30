@@ -1,9 +1,9 @@
 Package: shinyBoots
-Title: What the Package Does (one line, title case)
+Title: Shortcuts for Twitter Bootstrap
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.3.2)
+Authors@R: person("Jordan", "DeHerrera", email = "jordan.deherrera@gmail.com", role = c("aut", "cre"))
+Description: Shiny Boots makes it easier to create Twitter Bootstrap components.  It also contains frequently used modules for creating functional dashboards and Shiny pages as well as data manipulation and connections with databases on a local server.
+Depends: R (>= 3.2)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
