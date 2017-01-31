@@ -40,7 +40,7 @@ box <- function(..., title = NULL, footer = NULL, status = NULL, solidHeader = F
   }
   collapseTag <- NULL
   if (collapsible) {
-    buttonStatus <- status %OR% "default"
+    buttonStatus <- ifelse(exists(status),status,"default")
     collapseIcon <- if (collapsed)
       "plus"
     else "minus"
