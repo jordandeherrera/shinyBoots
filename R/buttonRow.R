@@ -9,6 +9,7 @@
 #'   buttonModal(buttonModal("sample-id","ID Form")),
 #'   actionButton("submit","Submit Responses", icon = icon("check"))
 #'   ))
+
 buttonRow <- function( ...){
   tags$div(class="btn-group", `role`="group", `aria-label`="Basic example", ...)
 }
