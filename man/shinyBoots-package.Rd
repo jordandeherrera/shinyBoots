@@ -4,7 +4,7 @@
 \name{shinyBoots-package}
 \alias{shinyBoots}
 \alias{shinyBoots-package}
-\title{Generate R documentation from inline comments.}
+\title{shinyBoots Package Documentation}
 \description{
 This package contains functions to make it easier to create a reactive website
 using Twitter Bootstrap and Shiny.  It also contains some functions to make it
