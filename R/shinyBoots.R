@@ -27,6 +27,59 @@
 #' \code{\link{createPrezModalScript}} - creates a modal that can contain a Google Slides presentation
 #'
 #' \code{\link{createUIModal}} - creates a modal that can contain a Shiny UI
+#'
+#' \code{\link{trackingScriptOut}} - creates a tracking script for Google Analytics
+#'
+#' \code{\link{valueBoxGroup}} - creates a group of value boxes
+#' }
+#'
+#' \subsection{CRUD}{
+#'
+#' \code{\link{CastData}} - casts data as part of a CRUD series of functions
+#'
+#' \code{\link{CreateData}} - appends or creates data
+#'
+#' \code{\link{DeleteData}} - deletes the selected record
+#'
+#' \code{\link{GetNextId}} - gets the next ID in a list of records
+#'
+#' \code{\link{GetTableMetadata}} - gets table metadata (often useful in creating forms for the UI, etc.)
+#'
+#' \code{\link{ReadData}} - reads data from a saved source
+#'
+#' \code{\link{saveData}} - saves the selected record
+#'
+#' \code{\link{UpdateData}} - updates the selected record
+#'
+#' \code{\link{UpdateInputs}} - updates inputs in UI as part of a CRUD series of functions
+#' }
+#'
+#' \subsection{CSV}{
+#'
+#' \code{\link{csvFile}} - handles the input of the CSV file input (server-side function)
+#'
+#' \code{\link{csvFileInput}} - creates csv file input (UI-side function)
+#' }
+#'
+#' \subsection{SQL}{
+#'
+#' \code{\link{loadData}} - returns a data frame that is the output of a SQL query
+#'
+#' \code{\link{setSQLOptions}} - sets SQL default options for making database connections
+#' }
+#'
+#' \subsection{Visualization}{
+#'
+#' \code{\link{highcharterOptions}} - sets highcharter options
+#'
+#' \code{\link{second_el_to_numeric}} - converts a list to numeric for use with highcharter drilldown charts
+#' }
+#'
+#' \subsection{Initialization}{
+#'
+#' \code{\link{loadPkgs}} - loads a list of packages from a specified location
+#'
+#' \code{\link{problemPackages}} - removes and then loads problematic packages
 #' }
 "_PACKAGE"
 #> [1] "_PACKAGE"
