@@ -14,7 +14,8 @@ easier to connect to local database servers.
 The package contains functions that fall into the following general categories:
 functions to create boostrap elements, functions to create a reactive app with CRUD
 functions (create, retrieve, update, and delete), functions to create charts and
-visualizations, and functions to handle CSV files.
+visualizations, functions to handle CSV files in a Shiny app, and functions to manipulate
+data.
 
 \subsection{Bootstrap}{
 
@@ -80,6 +81,8 @@ server-side functions
 \code{\link{highcharterOptions}} - sets highcharter options
 
 \code{\link{second_el_to_numeric}} - converts a list to numeric for use with highcharter drilldown charts
+
+\code{\link{createHeatmap}} - creates a heatmap with Highcharter
 }
 
 \subsection{Initialization}{
@@ -87,6 +90,15 @@ server-side functions
 \code{\link{loadPkgs}} - loads a list of packages from a specified location
 
 \code{\link{problemPackages}} - removes and then loads problematic packages
+}
+
+\subsection{Data Manipulation}{
+
+\code{\link{filterData}} - dynamically filter through data with lazy evaluation
+
+\code{\link{wideToLong}} - change the shape of data from wide to long (columns converted to different factors in a single column)
+
+\code{\link{changeToSeries}} - change any dataset into a series for use with highcharter
 }
 }
 \author{

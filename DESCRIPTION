@@ -2,7 +2,7 @@ Package: shinyBoots
 Title: Shortcuts for Twitter Bootstrap
 Version: 0.0.0.9000
 Authors@R: person("Jordan", "DeHerrera", email = "jordan.deherrera@gmail.com", role = c("aut", "cre"))
-Description: Shiny Boots makes it easier to create Twitter Bootstrap components.  It also contains frequently used modules for creating functional dashboards and Shiny pages as well as data manipulation and connections with databases on a local server.
+Description: Shiny Boots makes it easier to create Twitter Bootstrap components.  #' The package contains functions that fall into the following general categories: functions to create boostrap elements, functions to create a reactive app with CRUD functions (create, retrieve, update, and delete), functions to create charts and visualizations, functions to handle CSV files in a Shiny app, and functions to manipulate data.
 Depends: R (>= 3.2)
 License: MIT License Copyright (c) 2017 Jordan DeHerrera
 Encoding: UTF-8
@@ -10,4 +10,7 @@ LazyData: true
 RoxygenNote: 5.0.1.9000
 Imports:
     RMySQL,
-    R.utils
+    R.utils,
+    highcharter,
+    dplyr,
+    tidyr
