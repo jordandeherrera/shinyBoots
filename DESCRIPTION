@@ -13,4 +13,5 @@ Imports:
     R.utils,
     highcharter,
     dplyr,
-    tidyr
+    tidyr,
+    lazyeval
