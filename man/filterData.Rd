@@ -18,4 +18,3 @@ This function filters a data frame using lazy evaluation.
 }
 \keyword{data}
 \keyword{manipulation}
-\keyword{modal,}

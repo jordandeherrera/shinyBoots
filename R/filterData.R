@@ -4,7 +4,7 @@
 #' @param data This is the data source to be filtered
 #' @param filterCat1 This is the column name which should be filtered
 #' @param value1 This is the value or value list to filter (evaluate to true)
-#' @keywords modal, data manipulation
+#' @keywords data manipulation
 #' @export
 #' @examples
 #' dat <- filterData(mtcars,"am",c(1,0))

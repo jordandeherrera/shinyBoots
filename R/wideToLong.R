@@ -3,7 +3,7 @@
 #' This function converts a data frame from wide format to long.
 #' @param data This is the data source to be converted
 #' @param colSelections These are the columns (references by column number) that contain the values
-#' @keywords modal, data manipulation
+#' @keywords data manipulation
 #' @export
 #' @examples
 #' library(dplyr)
