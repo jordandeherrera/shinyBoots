@@ -69,20 +69,15 @@ server-side functions
 \code{\link{csvFileInput}} - creates csv file input (UI-side function)
 }
 
-\subsection{SQL}{
+\subsection{Data Manipulation}{
 
-\code{\link{loadData}} - returns a data frame that is the output of a SQL query
+\code{\link{changeToSeries}} - change any dataset into a series for use with highcharter
 
-\code{\link{setSQLOptions}} - sets SQL default options for making database connections
-}
+\code{\link{filterData}} - dynamically filter through data with lazy evaluation
 
-\subsection{Visualization}{
+\code{\link{filterNotData}} - dynamically filter through data with lazy evaluation (opposite of above - filters for NOT cases)
 
-\code{\link{highcharterOptions}} - sets highcharter options
-
-\code{\link{second_el_to_numeric}} - converts a list to numeric for use with highcharter drilldown charts
-
-\code{\link{createHeatmap}} - creates a heatmap with Highcharter
+\code{\link{wideToLong}} - change the shape of data from wide to long (columns converted to different factors in a single column)
 }
 
 \subsection{Initialization}{
@@ -92,13 +87,20 @@ server-side functions
 \code{\link{problemPackages}} - removes and then loads problematic packages
 }
 
-\subsection{Data Manipulation}{
+\subsection{SQL}{
 
-\code{\link{filterData}} - dynamically filter through data with lazy evaluation
+\code{\link{loadData}} - returns a data frame that is the output of a SQL query
 
-\code{\link{wideToLong}} - change the shape of data from wide to long (columns converted to different factors in a single column)
+\code{\link{setSQLOptions}} - sets SQL default options for making database connections
+}
 
-\code{\link{changeToSeries}} - change any dataset into a series for use with highcharter
+\subsection{Visualization}{
+
+\code{\link{createHeatmap}} - creates a heatmap with Highcharter
+
+\code{\link{highcharterOptions}} - sets highcharter options
+
+\code{\link{second_el_to_numeric}} - converts a list to numeric for use with highcharter drilldown charts
 }
 }
 \author{
