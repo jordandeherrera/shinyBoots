@@ -14,5 +14,10 @@ wideToLong(data, colSelections)
 \description{
 This function converts a data frame from wide format to long.
 }
+\examples{
+library(dplyr)
+mtcars2 <- mtcars \%>\% mutate(Car = row.names(mtcars)) \%>\% select(Car,mpg,cyl,disp)
+dat <- wideToLong(mtcars2,c(2:4))
+}
 \keyword{data}
 \keyword{manipulation}

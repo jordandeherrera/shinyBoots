@@ -12,5 +12,8 @@ changeToSeries(df, keyColumnNameAsText)
 \description{
 This function converts a data frame to a series for use in highcharter
 }
+\examples{
+dataSeries <- changeToSeries(sampleDF,keyColumn)
+}
 \keyword{data}
 \keyword{manipulation}

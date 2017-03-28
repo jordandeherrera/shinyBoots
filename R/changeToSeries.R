@@ -5,11 +5,7 @@
 #' @keywords data manipulation
 #' @export
 #' @examples
-#' mtcars2 <- mtcars %>% mutate(Car = row.names(mtcars)) %>% select(Car,mpg,cyl,disp)
-#' mtcarsLong <- wideToLong(mtcars2,c(2,4))
-#' mtcarsLongFiltered <- filterData(mtcarsLong,"Category","mpg")
-#'
-#' })
+#' dataSeries <- changeToSeries(sampleDF,keyColumn)
 
 changeToSeries <- function(df,keyColumnNameAsText){
   require(tidyr)

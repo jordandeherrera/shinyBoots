@@ -16,5 +16,8 @@ filterData(data, filterCat1, value1)
 \description{
 This function filters a data frame using lazy evaluation.
 }
+\examples{
+dat <- filterData(mtcars,"am",c(1,0))
+}
 \keyword{data}
 \keyword{manipulation}

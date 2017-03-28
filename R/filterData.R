@@ -8,7 +8,6 @@
 #' @export
 #' @examples
 #' dat <- filterData(mtcars,"am",c(1,0))
-#' })
 
 filterData <- function(data,filterCat1,value1){
   require(dplyr)
