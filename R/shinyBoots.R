@@ -91,6 +91,8 @@
 #'
 #' \code{\link{createHeatmap}} - creates a heatmap with Highcharter
 #'
+#' \code{\link{createWaterfall}} - creates a waterfall chart with Highcharter
+#'
 #' \code{\link{highcharterOptions}} - sets highcharter options
 #'
 #' \code{\link{second_el_to_numeric}} - converts a list to numeric for use with highcharter drilldown charts
