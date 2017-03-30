@@ -10,7 +10,7 @@
 #' @examples
 #' dat2 <- mtcars %>% group_by(cyl,am) %>% summarise(AvgMPG = mean(mpg)) %>% as.data.frame() %>% rename(Value = AvgMPG) %>% mutate(am = ifelse(am == 1,"Automatic","Manual"))
 #' datSeries <- changeToSeries(dat2,"am")
-#' createColumn(datSeries,dat2$cyl,"Fuel Efficiency","Miles per Gallon by Transmission and Cylinders")
+#' createColumn(datSeries,unique(dat2$cyl),"Fuel Efficiency","Miles per Gallon by Transmission and Cylinders")
 
 createColumn <- function(seriesName,categories,title,subTitle){
   require(highcharter)
