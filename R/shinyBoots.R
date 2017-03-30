@@ -89,6 +89,8 @@
 #'
 #' \subsection{Visualization}{
 #'
+#' \code{\link{createColumn}} - creates a column chart with Highcharter
+#'
 #' \code{\link{createHeatmap}} - creates a heatmap with Highcharter
 #'
 #' \code{\link{createWaterfall}} - creates a waterfall chart with Highcharter
