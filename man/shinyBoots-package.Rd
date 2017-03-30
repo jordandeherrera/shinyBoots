@@ -77,6 +77,8 @@ server-side functions
 
 \code{\link{filterNotData}} - dynamically filter through data with lazy evaluation (opposite of above - filters for NOT cases)
 
+\code{\link{prepSeries}} - prepare a data set to be converted into a series for use in highcharter
+
 \code{\link{wideToLong}} - change the shape of data from wide to long (columns converted to different factors in a single column)
 }
 
