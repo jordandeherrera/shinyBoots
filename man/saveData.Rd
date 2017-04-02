@@ -15,7 +15,8 @@ saveData(data, table)
 This function appends data from a data frame to a table in a MySQL database.
 }
 \examples{
-  dat <- loadData("SELECT * FROM t_customers")
+  dat <- formData()
+  saveData(dat,"t_customers")
 }
 \keyword{RMySQL}
 \keyword{sql,}

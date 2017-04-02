@@ -55,8 +55,6 @@ server-side functions
 
 \code{\link{ReadData}} - reads data from a saved source
 
-\code{\link{saveData}} - saves the selected record
-
 \code{\link{UpdateData}} - updates the selected record
 
 \code{\link{UpdateInputs}} - updates inputs in UI as part of a CRUD series of functions
@@ -94,6 +92,8 @@ server-side functions
 \subsection{SQL}{
 
 \code{\link{loadData}} - returns a data frame that is the output of a SQL query
+
+\code{\link{saveData}} - appends the data frame to an existing table in SQL
 
 \code{\link{setSQLOptions}} - sets SQL default options for making database connections
 }

@@ -6,7 +6,8 @@
 #' @keywords sql, RMySQL
 #' @export
 #' @examples
-#'   dat <- loadData("SELECT * FROM t_customers")
+#'   dat <- formData()
+#'   saveData(dat,"t_customers")
 
 saveData <- function(data, table) {
   require(RMySQL)
@@ -15,6 +16,6 @@ saveData <- function(data, table) {
                   port = options()$mysql$port, user = options()$mysql$user, 
                   password = options()$mysql$password)
   # Submit the update query and disconnect
-  dbWriteTable(db, table, data, append = T, overwrite = F, row.names = F)
+  dbWriteTable(db, table, data, append = F, overwrite = T, row.names = F)
   dbDisconnect(db)
 }
