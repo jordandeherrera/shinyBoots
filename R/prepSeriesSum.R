@@ -13,7 +13,7 @@
 #' datSeries <- changeToSeries(dat2,"am")
 #' createColumn(datSeries,unique(dat2$cyl),"Fuel Efficiency","Miles per Gallon by Transmission and Cylinders")
 
-prepSeries <- function(df,x1,x2,y){
+prepSeriesSum <- function(df,x1,x2,y){
   require(dplyr)
   require(lazyeval)
 

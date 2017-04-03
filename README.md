@@ -13,10 +13,12 @@ The shinyBoots package contains functions that fall into the following general c
 
 -   Functions to manipulate data.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Highcharter and Data Manipulation Functions
+-------------------------------------------
 
-Sample Drilldown Chart
-----------------------
+As an example of what's possible with single line functions, see the following examples that use a common dataset.
+
+### Sample Drilldown Chart
 
 ``` r
 df <- data.frame(
@@ -25,18 +27,62 @@ df <- data.frame(
  id = c(rep("cars",3), rep("animals",5), rep("fruits",2)),
  stringsAsFactors = FALSE
  )
+```
+
+### Drilldown Chart
+
+``` r
 createDrilldown(df,"id","Drilldown Test","Some additional text here for subtitle")
 ```
 
-<!--html_preserve-->
+The following images show how a drilldown chart works within an HTML page (the images below are static, but in an html page, they would be dynamic and interactive).
 
-<script type="application/json" data-for="htmlwidget-e7ac86f0cd83f1fde922">{"x":{"hc_opts":{"title":{"text":"Drilldown Test"},"yAxis":{"title":{"text":null}},"credits":{"enabled":false},"exporting":{"enabled":false},"plotOptions":{"series":{"turboThreshold":0,"boderWidth":0,"dataLabels":{"enabled":true,"format":"{point.y:,.2f}"}},"treemap":{"layoutAlgorithm":"squarified"},"stacking":"normal"},"chart":{"type":"column"},"subtitle":{"text":"Some additional text here for subtitle"},"xAxis":{"type":"category"},"legend":{"enabled":false},"tooltip":{"crosshairs":true,"borderWidth":2,"pointFormat":"{point.y:,.0f}"},"series":[{"name":"Things","colorByPoint":true,"data":[{"name":"animals","y":5,"drilldown":"animals"},{"name":"cars","y":3,"drilldown":"cars"},{"name":"fruits","y":2,"drilldown":"fruits"}]}],"drilldown":{"allowPointDrilldown":true,"series":[{"id":"animals","data":[["Cats",4],["Dogs",3],["Cows",1],["Sheep",2],["Pigs",1]]},{"id":"cars","data":[["Toyota",4],["Ford",2],["Volkswagen",2]]},{"id":"fruits","data":[["Apple",4],["Oranges",2]]}]}},"theme":{"chart":{"backgroundColor":"transparent"}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":[],"jsHooks":[]}</script>
-<!--/html_preserve-->
-Including Plots
----------------
+![](mainDrilldown.png)
 
-You can also embed plots, for example:
+![](ClickToDrilldown.png)
 
-![](README_files/figure-markdown_github/pressure-1.png)
+![](NextSeries.png)
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+### Heatmap Chart
+
+``` r
+library(dplyr)
+dfCars <- mtcars %>% group_by(cyl,wt = round(wt,0)) %>% summarise(mpg = mean(mpg))
+createHeatmap(dfCars,"wt","cyl","mpg","Cars Heatmap","Mileage by cylinders and transmission","Weight","Cylinders")
+```
+
+This is an example of the output of a heatmap chart:
+
+![](carsHeatmap.png)
+
+### Waterfall Chart
+
+``` r
+dfNames <- c("Starting value of stock",
+"Accretion due to future business forecasts",
+"Accretion due to inflation and projections of existing business",
+"Other accretion",
+"Dilution due to additional investors","Final value of stock")
+dfValues <- c(416468,2338,140,72,-1773,NA)
+isIntermediateSum = c(0,0,0,0,0,0)
+isSum = c(0,0,0,0,0,1)
+createWaterfall(dfNames, dfValues, isSum, isIntermediateSum,"Stock Price Fluctuations",
+"Effects of Various Accretion and Dilution Activities","Adjustment Type","Percent Effect")
+```
+
+Example of a waterfall chart:
+
+![](waterfall.png)
+
+### Simple Column Chart with Series Transformation
+
+Here is an example of a simple column chart as well as a series transformation function using the well-known mtcars dataset.
+
+``` r
+library(dplyr)
+dat2 <- prepSeries(mtcars,"cyl","am","mpg") %>% mutate(am = ifelse(am == 1,"Automatic","Manual"))
+datSeries <- changeToSeries(dat2,"am")
+createColumn(datSeries,unique(dat2$cyl),"Fuel Efficiency","Miles per Gallon by Transmission and Cylinders")
+```
+
+![](columnChart.png)
