@@ -20,11 +20,12 @@
 
 createDrilldown <- function(df,idColumnNameAsText,title,subTitle){
   require(highcharter)
+  require(purrr)
 
   ds <- summarizeDrilldownSeries(df,idColumnNameAsText)
-  
+
   datSeries <- changeToDrilldownSeries(df,idColumnNameAsText)
-  
+
   hc <- highchart() %>%
     hc_chart(type = "column") %>%
     hc_title(text = title) %>%
@@ -46,11 +47,11 @@ createDrilldown <- function(df,idColumnNameAsText,title,subTitle){
       name = "Things",
       colorByPoint = TRUE,
       data = ds
-    ) %>% 
+    ) %>%
     hc_drilldown(
       allowPointDrilldown = TRUE,
       series = datSeries
     )
-  
+
   return(hc)
 }

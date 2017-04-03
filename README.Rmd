@@ -2,6 +2,7 @@
 title: "README"
 author: "Jordan DeHerrera"
 date: "April 3, 2017"
+always_allow_html: yes
 output:
   md_document:
     variant: markdown_github
@@ -9,16 +10,36 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(shinyBoots)
+library(purrr)
 ```
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+The shinyBoots package contains functions that fall into the following general categories:
+
+* Functions to create boostrap elements
+
+* Functions to create a reactive app with CRUD functions (create, retrieve, update, and delete)
+
+* Functions to create charts and visualizations
+
+* Functions to handle CSV files in a Shiny app
+
+* Functions to manipulate data.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+## Sample Drilldown Chart
+
+```{r cars, warning=FALSE, message=FALSE}
+df <- data.frame(
+ name = c("Toyota", "Ford", "Volkswagen", "Cats", "Dogs", "Cows", "Sheep", "Pigs", "Apple", "Oranges"),
+ value = c(4, 2, 2, 4, 3, 1, 2, 1, 4, 2),
+ id = c(rep("cars",3), rep("animals",5), rep("fruits",2)),
+ stringsAsFactors = FALSE
+ )
+createDrilldown(df,"id","Drilldown Test","Some additional text here for subtitle")
 ```
 
 ## Including Plots
