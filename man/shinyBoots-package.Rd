@@ -69,15 +69,19 @@ server-side functions
 
 \subsection{Data Manipulation}{
 
-\code{\link{changeToSeries}} - change any dataset into a series for use with highcharter
+\code{\link{changeToDrilldownSeries}} - change a dataset to a drilldown series for use with Highcharter
+
+\code{\link{changeToSeries}} - change any dataset into a series for use with Highcharter
 
 \code{\link{filterData}} - dynamically filter through data with lazy evaluation
 
 \code{\link{filterNotData}} - dynamically filter through data with lazy evaluation (opposite of above - filters for NOT cases)
 
-\code{\link{prepSeries}} - prepare a data set to be converted into a series for use in highcharter (uses mean)
+\code{\link{prepSeries}} - prepare a data set to be converted into a series for use in Highcharter (uses mean)
 
-\code{\link{prepSeriesSum}} - prepare a data set to be converted into a series for use in highcharter (uses sum)
+\code{\link{prepSeriesSum}} - prepare a data set to be converted into a series for use in Highcharter (uses sum)
+
+\code{\link{summarizeDrilldownSeries}} - create a summary series for a drilldown chart with Highcharter
 
 \code{\link{wideToLong}} - change the shape of data from wide to long (columns converted to different factors in a single column)
 }
@@ -93,7 +97,7 @@ server-side functions
 
 \code{\link{loadData}} - returns a data frame that is the output of a SQL query
 
-\code{\link{saveData}} - appends the data frame to an existing table in SQL
+\code{\link{saveData}} - saves the data frame to a specific SQL table
 
 \code{\link{setSQLOptions}} - sets SQL default options for making database connections
 }
@@ -101,6 +105,8 @@ server-side functions
 \subsection{Visualization}{
 
 \code{\link{createColumn}} - creates a column chart with Highcharter
+
+\code{\link{createDrilldown}} - create a drilldown chart with Highcharter
 
 \code{\link{createHeatmap}} - creates a heatmap with Highcharter
 
