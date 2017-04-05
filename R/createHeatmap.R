@@ -34,7 +34,7 @@ createHeatmap <- function(data,xText,yText,valueText,title,subTitle,xTitle,yTitl
                                        y = yText,
                                        value = valueText)) %>%
     hc_xAxis(title = list(text = xTitle)) %>%
-    hc_yAxis(title = list(text = yTitle),
+    hc_yAxis(title = list(text = yTitle), offset = 10,
              reversed = TRUE, offset = -20, tickLength = 0,
              gridLineWidth = 0, minorGridLineWidth = 0,
              labels = list(style = list(fontSize = "8px"))) %>%
