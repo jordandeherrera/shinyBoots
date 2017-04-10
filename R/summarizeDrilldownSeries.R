@@ -12,9 +12,9 @@
 #' id = c(rep("cars",3), rep("animals",5), rep("fruits",2)),
 #' stringsAsFactors = FALSE
 #' )
-#' ds <- summarizeDrilldownSeries(df,idColumnNameAsText)
-#' datSeries <- changeToDrilldownSeries(df,idColumnNameAsText)
-#' hc <- createDrilldown(df,idColumnNameAsText,"Drilldown Test","Some additional text here for subtitle")
+#' ds <- summarizeDrilldownSeries(df,"id")
+#' datSeries <- changeToDrilldownSeries(df,"id")
+#' hc <- createDrilldown(df,"id","Things","Drilldown Test","Some additional text here for subtitle")
 
 summarizeDrilldownSeries <- function(df,idColumnNameAsText){
   require(dplyr)

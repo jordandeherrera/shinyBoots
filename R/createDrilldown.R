@@ -3,6 +3,7 @@
 #' This function creates a column chart using highcharter.
 #' @param df This is the data frame that provides data for the graph.
 #' @param idColumnNameAsText This is the name of the column that should be the "id" part of the series
+#' @param SeriesName This is the label of the series in the base level of the drilldown chart
 #' @param title This is the title of the chart
 #' @param subTitle This is the subtitle of the chart
 #' @keywords highcharter, drilldown chart
@@ -14,11 +15,11 @@
 #' id = c(rep("cars",3), rep("animals",5), rep("fruits",2)),
 #' stringsAsFactors = FALSE
 #' )
-#' ds <- summarizeDrilldownSeries(df,idColumnNameAsText)
-#' datSeries <- changeToDrilldownSeries(df,idColumnNameAsText)
-#' hc <- createDrilldown(df,idColumnNameAsText,"Drilldown Test","Some additional text here for subtitle")
+#' ds <- summarizeDrilldownSeries(df,"id")
+#' datSeries <- changeToDrilldownSeries(df,"id")
+#' hc <- createDrilldown(df,"id","Things","Drilldown Test","Some additional text here for subtitle")
 
-createDrilldown <- function(df,idColumnNameAsText,title,subTitle){
+createDrilldown <- function(df,idColumnNameAsText,SeriesName,title,subTitle){
   require(highcharter)
   require(purrr)
 
@@ -44,7 +45,7 @@ createDrilldown <- function(df,idColumnNameAsText,title,subTitle){
                borderWidth = 2,
                pointFormat = '{point.y:,.0f}') %>%
     hc_add_series(
-      name = "Things",
+      name = SeriesName,
       colorByPoint = TRUE,
       data = ds
     ) %>%

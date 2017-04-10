@@ -4,12 +4,14 @@
 \alias{createDrilldown}
 \title{Create a Drilldown Chart Using Highcharter}
 \usage{
-createDrilldown(df, idColumnNameAsText, title, subTitle)
+createDrilldown(df, idColumnNameAsText, SeriesName, title, subTitle)
 }
 \arguments{
 \item{df}{This is the data frame that provides data for the graph.}
 
 \item{idColumnNameAsText}{This is the name of the column that should be the "id" part of the series}
+
+\item{SeriesName}{This is the label of the series in the base level of the drilldown chart}
 
 \item{title}{This is the title of the chart}
 
@@ -25,9 +27,9 @@ value = c(4, 2, 2, 4, 3, 1, 2, 1, 4, 2),
 id = c(rep("cars",3), rep("animals",5), rep("fruits",2)),
 stringsAsFactors = FALSE
 )
-ds <- summarizeDrilldownSeries(df,idColumnNameAsText)
-datSeries <- changeToDrilldownSeries(df,idColumnNameAsText)
-hc <- createDrilldown(df,idColumnNameAsText,"Drilldown Test","Some additional text here for subtitle")
+ds <- summarizeDrilldownSeries(df,"id")
+datSeries <- changeToDrilldownSeries(df,"id")
+hc <- createDrilldown(df,"id","Things","Drilldown Test","Some additional text here for subtitle")
 }
 \keyword{chart}
 \keyword{drilldown}
