@@ -31,7 +31,8 @@ changeToDrilldownSeries <- function(df,idColumnNameAsText){
 
   dat <- df %>%
     group_by_(id = idColumnNameAsText) %>%
-    do(data=second_el_to_numeric(list_parse2(data.frame(name = .$name,value = .$value,stringsAsFactors = FALSE))))
+    do(data=second_el_to_numeric(list_parse2(data.frame(name = .$name,value = .$value,stringsAsFactors = FALSE)))) %>%
+    mutate(id = tolower(id))
 
   series <- list_parse(dat)
   return(series)
