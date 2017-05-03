@@ -35,16 +35,24 @@ createHeatmap <- function(data,xText,yText,valueText,title,subTitle,xTitle,yTitl
                                        value = valueText)) %>%
     hc_xAxis(title = list(text = xTitle)) %>%
     hc_yAxis(title = list(text = yTitle), offset = 10,
-             reversed = TRUE, offset = -20, tickLength = 0,
+             reversed = TRUE, offset = -10, tickLength = 0,
              gridLineWidth = 0, minorGridLineWidth = 0,
              labels = list(style = list(fontSize = "8px"))) %>%
-    hc_colorAxis(stops = color_stops(10, rev(inferno(10))),
+    hc_plotOptions(
+      series = list(
+        boderWidth = 0,
+        dataLabels = list(enabled = TRUE,
+                          format = '{point.value:,.2f}')
+      ),
+      stacking = "normal"
+    ) %>%
+    hc_colorAxis(stops = color_stops(8, rev(inferno(10))),
                  type = "logarithmic") %>%
     hc_tooltip(formatter = fntltp) %>%
     hc_title(text = title) %>%
     hc_subtitle(text = subTitle) %>%
     hc_legend(layout = "vertical", verticalAlign = "top",
               align = "right", valueDecimals = 0) %>%
-    hc_size(height = 800)
+    hc_size(height = 600)
   return(hc)
 }
