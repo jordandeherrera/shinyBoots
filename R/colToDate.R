@@ -3,7 +3,7 @@
 #' This function converts a character column in a data frame to time and then strips out day and hour of the time as new columns.  The output is a new data frame with one modified column (character converted to date) and two new columns (day of week and hour of day).
 #' @param dat This is the data source to be converted
 #' @param dateColName This is the name of the date column to be converted
-#' @param dateFormat This is the format of the date column (e.g., "%Y-%m-%d")
+#' @param dateFormat This is the format of the date column
 #' @keywords data manipulation, datetime conversion
 #' @export
 #' @examples

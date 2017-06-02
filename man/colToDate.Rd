@@ -11,7 +11,7 @@ colToDate(dat, dateColName, dateFormat)
 
 \item{dateColName}{This is the name of the date column to be converted}
 
-\item{dateFormat}{This is the format of the date column (e.g., "%Y-%m-%d")}
+\item{dateFormat}{This is the format of the date column}
 }
 \description{
 This function converts a character column in a data frame to time and then strips out day and hour of the time as new columns.  The output is a new data frame with one modified column (character converted to date) and two new columns (day of week and hour of day).
