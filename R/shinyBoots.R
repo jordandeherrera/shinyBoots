@@ -66,6 +66,8 @@
 #'
 #' \code{\link{changeToSeries}} - change any dataset into a series for use with Highcharter
 #'
+#' \code{\link{colToDate}} - convert a character time column into a date and strip out hour and day
+#'
 #' \code{\link{filterData}} - dynamically filter through data with lazy evaluation
 #'
 #' \code{\link{filterNotData}} - dynamically filter through data with lazy evaluation (opposite of above - filters for NOT cases)
@@ -96,6 +98,8 @@
 #' }
 #'
 #' \subsection{Visualization}{
+#'
+#' \code{\link{createAreaChart}} - creates an area chart with Highcharter
 #'
 #' \code{\link{createColumn}} - creates a column chart with Highcharter
 #'

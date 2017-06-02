@@ -4,21 +4,24 @@
 \alias{changeToSeries}
 \title{Convert a Data Frame to a Series for Use in Highcharter}
 \usage{
-changeToSeries(df, keyColumnNameAsText)
+changeToSeries(dat, nameLabel, valueLabel)
 }
 \arguments{
-\item{df}{This is the data source to be converted}
+\item{dat}{This is the data source to be converted}
 
-\item{keyColumnNameAsText}{This is the name of the column that should be the "name" part of the series}
+\item{nameLabel}{This is the name of the column that should be the "name" part of the series}
+
+\item{valueLabel}{This is the name of the column that contains the values that will be the "data" in the series}
 }
 \description{
 This function converts a data frame to a series for use in highcharter
 }
 \examples{
 library(dplyr)
-dat2 <- prepSeries(mtcars,"cyl","am","mpg") \%>\% mutate(am = ifelse(am == 1,"Automatic","Manual"))
-datSeries <- changeToSeries(dat2,"am")
-createColumn(datSeries,unique(dat2$cyl),"Fuel Efficiency","Miles per Gallon by Transmission and Cylinders")
+mtcars <- mtcars \%>\% mutate(vehicle_name = row.names(.))
+datSeries <- changeToSeries(mtcars,"vehicle_name","mpg")
 }
 \keyword{data}
-\keyword{manipulation}
+\keyword{highcharter,}
+\keyword{manipulation,}
+\keyword{series}

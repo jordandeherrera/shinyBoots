@@ -7,7 +7,7 @@ Depends: R (>= 3.2)
 License: MIT License Copyright (c) 2017 Jordan DeHerrera
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1.9000
+RoxygenNote: 6.0.1
 Imports:
     RMySQL,
     R.utils,

@@ -22,20 +22,51 @@ createHeatmap <- function(data,xText,yText,valueText,title,subTitle,xTitle,yTitl
   # Load required libraries
   require(highcharter)
   require(viridis)
+  require(lazyeval)
 
   # Create tooltip function
   fntltp <- JS("function(){
                return this.series.xAxis.categories[this.point.x] + ' ' +  this.point.y + ':00' + ':<br>' +
                Highcharts.numberFormat(this.point.value, 2);
-              }")
+}")
+
+  hcaes_string <- function (x, y, ...){
+
+    mapping <- list(...)
+
+    if (!missing(x))
+      mapping["x"] <- list(x)
+
+    if (!missing(y))
+      mapping["y"] <- list(y)
+
+    mapping <- lapply(mapping, function(x) {
+      if (is.character(x)) {
+        parse(text = x)[[1]]
+      }
+      else {
+        x
+      }
+    })
+
+    mapping <- structure(mapping, class = "uneval")
+
+    mapping <- mapping[names(mapping) != ""]
+
+    class(mapping) <- c("hcaes", class(mapping))
+
+    mapping
+  }
+
+  hcaes_ <- hcaes_string
 
   # Create highchart heatmap
   hc <- hchart(data, "heatmap", hcaes_(x = xText,
                                        y = yText,
                                        value = valueText)) %>%
     hc_xAxis(title = list(text = xTitle)) %>%
-    hc_yAxis(title = list(text = yTitle), offset = 10,
-             reversed = TRUE, offset = -10, tickLength = 0,
+    hc_yAxis(title = list(text = yTitle),
+             reversed = TRUE, offset = -20, tickLength = 0,
              gridLineWidth = 0, minorGridLineWidth = 0,
              labels = list(style = list(fontSize = "8px"))) %>%
     hc_plotOptions(
@@ -46,13 +77,13 @@ createHeatmap <- function(data,xText,yText,valueText,title,subTitle,xTitle,yTitl
       ),
       stacking = "normal"
     ) %>%
-    hc_colorAxis(stops = color_stops(8, rev(inferno(10))),
+    hc_colorAxis(stops = color_stops(10, rev(inferno(10))),
                  type = "logarithmic") %>%
     hc_tooltip(formatter = fntltp) %>%
     hc_title(text = title) %>%
     hc_subtitle(text = subTitle) %>%
     hc_legend(layout = "vertical", verticalAlign = "top",
               align = "right", valueDecimals = 0) %>%
-    hc_size(height = 600)
+    hc_size(height = 800)
   return(hc)
-}
+  }
