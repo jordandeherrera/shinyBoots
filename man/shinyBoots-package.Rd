@@ -97,6 +97,8 @@ server-side functions
 
 \subsection{SQL}{
 
+\code{\link{createQuery}} - query a variety of different databases
+
 \code{\link{loadData}} - returns a data frame that is the output of a SQL query
 
 \code{\link{saveData}} - saves the data frame to a specific SQL table
