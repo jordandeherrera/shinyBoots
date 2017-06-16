@@ -19,7 +19,7 @@ colToDate <- function(dat,dateColName,dateFormat){
               "(5) Friday","(6) Saturday","(7) Sunday")
   dow <- 1:7
 
-  mutate_call1 = lazyeval::interp(~ as.Date(a,format = b), a = as.name(dateColName), b = dateFormat)
+  mutate_call1 = lazyeval::interp(~ as.POSIXct(strptime(a, format = b)), a = as.name(dateColName), b = dateFormat)
   mutate_call2 = lazyeval::interp(~ hour(a), a = as.name(dateColName))
   mutate_call3 = lazyeval::interp(~ wday(a), a = as.name(dateColName))
 
