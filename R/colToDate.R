@@ -15,8 +15,8 @@ colToDate <- function(dat,dateColName,dateFormat){
   require(lubridate)
   require(lazyeval)
 
-  dnames <- c("(1) Monday","(2) Tuesday","(3) Wednesday","(4) Thursday",
-              "(5) Friday","(6) Saturday","(7) Sunday")
+  dnames <- c("(1) Sunday","(2) Monday","(3) Tuesday","(4) Wednesday",
+              "(5) Thursday","(6) Friday","(7) Saturday")
   dow <- 1:7
 
   mutate_call1 = lazyeval::interp(~ as.POSIXct(strptime(a, format = b)), a = as.name(dateColName), b = dateFormat)
